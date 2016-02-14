@@ -1,0 +1,18 @@
+<header>
+  <h1>Rainforest</h1>
+  <nav>
+    <ul>
+      <li><%= link_to "Products", products_path %></li>
+      <li><%= link_to "Add Product", new_product_path %></li>
+      <li><%= link_to "Help", '/products/help' %></li>
+      <li class="userinfo">
+         <% if current_user %>
+           Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+         <% else %>
+           <li><%= link_to "Log in", new_session_path %></li>
+           <li><%= link_to "Sign up", new_user_path %></li>
+         <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>
